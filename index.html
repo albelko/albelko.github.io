@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Software engineering and the World around</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: Lato, Helvetica, Arial, sans-serif;
+            margin: 0;
+            height: 100%;
+            background: #222;
+        }
+
+        h1 {
+            font-family: Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 2.6em;
+            line-height: 1;
+            margin: 0;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 0.8em;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            height: 100%;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+
+        .gradient-border {
+            --border-width: 4px;
+            position: relative;
+            width: 100%;
+            padding: 1.5em 2.5em;
+            text-transform: uppercase;
+            color: white;
+            background: #222;
+            border-radius: 0;
+        }
+
+        .gradient-border:hover {
+            background: transparent;
+            color: #222222;
+        }
+
+        .gradient-border::after {
+            position: absolute;
+            content: "";
+            top: calc(-1 * var(--border-width));
+            left: calc(-1 * var(--border-width));
+            z-index: -1;
+            width: calc(100% + var(--border-width) * 2);
+            height: calc(100% + var(--border-width) * 2);
+            background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            border-radius: 0;
+            animation: moveGradient 4s alternate infinite;
+        }
+
+        @keyframes moveGradient {
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <a href="/">
+                <div class="gradient-border">
+                    <h1>Alexander Belko</h1>
+                    <h2>Software Engineering / Front-End Development / UX & UI</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154798320-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-154798320-1');
+    </script>
+</body>
+</html>
+
